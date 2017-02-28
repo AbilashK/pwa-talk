@@ -1,8 +1,8 @@
 {
   "name": "PWA Talk",
-  "short_name": "pwa-talk",
+  "short_name": "PWA Talk",
   "theme_color": "#171b14",
-  "background_color": "#23679d",
+  "background_color": "#222222",
   "display": "standalone",
   "Scope": "/pwa-talk/",
   "start_url": "/pwa-talk/",
