@@ -4,7 +4,8 @@
   "theme_color": "#171b14",
   "background_color": "#23679d",
   "display": "standalone",
-  "start_url": "/index.html",
+  "Scope": "/pwa-talk/",
+  "start_url": "/pwa-talk/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
