@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["css/reveal.css","ef73369b0150b2f714d72fc7e9ff3bf4"],["index.html","8cb60f00cf28f887c09b2f2482e40fb5"],["js/reveal.js","24463b7370c259d7d84b63496b66901e"],["js/reveal.min.js","2fba027771eb516b117b696a951640c7"]];
+var precacheConfig = [["css/reveal.css","ef73369b0150b2f714d72fc7e9ff3bf4"],["index.html","c694108fd277ff4a584b179ef9d96986"],["js/reveal.js","24463b7370c259d7d84b63496b66901e"],["js/reveal.min.js","2fba027771eb516b117b696a951640c7"]];
 var cacheName = 'sw-precache-v3-pwa-talk-' + (self.registration ? self.registration.scope : '');
 
 
