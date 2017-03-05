@@ -135,6 +135,13 @@
 
       messaging.onMessage(function(payload) {
         console.log("Message received. ", payload);
+        alert(payload);
+        var options = {
+            body: payload.notification.body,
+            icon: payload.notification.icon,
+        }
+        var n = new Notification(payload.notification.title, options);
+        setTimeout(n.close.bind(n), 5000);
       });
 
       var dynamicUrl = 'https://pwa-demo-74abf.firebaseio.com/blogs.json';
