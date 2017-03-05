@@ -177,7 +177,7 @@ module.exports = function(grunt) {
 				urlPattern: /^https:\/\/pwa-demo-74abf.firebaseio.com\/blogs.json/,
 				handler: 'networkFirst'
 			}],
-			importScripts: ['/js/firebase-msg-sw.js'],
+			importScripts: ['js/firebase-msg-sw.js'],
       stripPrefix: rootDir + '/',
       // verbose defaults to false, but for the purposes of this demo, log more.
       verbose: true

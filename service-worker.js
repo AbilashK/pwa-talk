@@ -205,5 +205,5 @@ self.addEventListener('activate', function(event) {
 
 
 
-importScripts("/js/firebase-msg-sw.js");
+importScripts("js/firebase-msg-sw.js");
 
