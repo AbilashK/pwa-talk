@@ -72,6 +72,13 @@
             </code></pre>
           </span><br/>
         </section>
+        <section>
+          Dynamic Content<br/><br/>
+          <span class="fragment fade-in">XHR</span><br/>
+          <span class="fragment fade-in">
+            <pre class="fragment fade-in"><code id="fireblog" data-trim></code></pre>
+          </span>
+        </section>
       </div>
     </div>
 
@@ -90,6 +97,31 @@
           { src: 'plugin/notes/notes.js', async: true },
           { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
         ]
+      });
+
+      var dynamicUrl = 'https://pwa-demo-74abf.firebaseio.com/blogs.json';
+
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+        if (event.indexh == 5){
+          // if ('caches' in window) {
+          //   caches.match(dynamicUrl).then(function(response) {
+          //     if (response) {
+          //       response.json().then(function(json) {
+          //         console.log('From cache')
+          //         document.getElementById('fireblog').innerHTML = JSON.stringify(json, null, 2)
+          //       });
+          //     }
+          //   });
+          // }
+          fetch(dynamicUrl).then(function(response) {
+            return response.json()
+          }).then(function(json) {
+            console.log('From network')
+            document.getElementById('fireblog').innerHTML = JSON.stringify(json, null, 2)
+          }).catch(function(ex) {
+            console.log('parsing failed', ex)
+          })
+        }
       });
 
       if ('serviceWorker' in navigator) {

@@ -173,6 +173,10 @@ module.exports = function(grunt) {
         rootDir + '/images/**.*',
         rootDir + '/js/**.js'
       ],
+			runtimeCaching: [{
+				urlPattern: /^https:\/\/pwa-demo-74abf.firebaseio.com\/blogs.json/,
+				handler: 'networkFirst'
+			}],
       stripPrefix: rootDir + '/',
       // verbose defaults to false, but for the purposes of this demo, log more.
       verbose: true
