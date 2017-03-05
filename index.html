@@ -1,57 +1,102 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>PWA Talk - Abilash K</title>
+    <title>PWA Talk - Abilash K</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<link rel="manifest" href="manifest.json">
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <link rel="manifest" href="manifest.json">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          Progressive Web Apps<br/>
+          <img src="images/pwa-bg.png" style="height:35%;width:35%"/><br/>
+        </section>
+        <section>
+          What is a Progressive Web App?<br/><br/>
+          <span class="fragment fade-in">The start URL loads while offline</span><br/>
+          <span class="fragment fade-in">First load fast even on 3G</span><br/>
+          <span class="fragment fade-in">Site uses cache-first networking</span><br/>
+          <span class="fragment fade-in">Metadata provided for Add to Home screen</span><br/>
+          <span class="fragment fade-in">Push notifications support on web even when outside of the site</span><br/>
+        </section>
+        <section>
+          How is it implemented?<br/><br/>
+          <span class="fragment fade-in">Chrome 52 or above</span><br/>
+          <span class="fragment fade-in">Service Workers</span><br/>
+          <span class="fragment fade-in">App Shell architecture</span><br/>
+          <span class="fragment fade-in">Caching assets and network requests</span><br/>
+        </section>
+        <section>
+          Static Content<br/><br/>
+          <span class="fragment fade-in">Images</span><br/>
+          <span class="fragment fade-in">
+            <img src="images/pwa-intro.png" style="height:35%;width:35%"/>
+            <img src="images/pwa-reliable.png" style="height:35%;width:35%"/><br/>
+          </span>
+        </section>
+        <section>
+          Static Content<br/><br/>
+          <span class="fragment fade-in">Stylesheets
+            <pre class="fragment fade-in"><code data-trim>.reveal {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 42px;
+  font-weight: normal;
+  color: #fff;
+}
+            </code></pre>
+          </span><br/>
+          <span class="fragment fade-in">Javascript
+            <pre class="fragment fade-in"><code data-trim>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+      .register('./service-worker.js')
+      .then(function() { console.log('Service Worker Registered'); });
+}
+            </code></pre>
+          </span><br/>
+        </section>
+      </div>
+    </div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
 
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
 
-			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker
-								.register('./service-worker.js')
-								.then(function() { console.log('Service Worker Registered'); });
-			}
-		</script>
-	</body>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+                .register('./service-worker.js')
+                .then(function() { console.log('Service Worker Registered'); });
+      }
+    </script>
+  </body>
 </html>
