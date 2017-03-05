@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="lib/css/zenburn.css">
 
     <link rel="manifest" href="manifest.json">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
     <!-- Printing and PDF exports -->
     <script>
       var link = document.createElement( 'link' );
@@ -79,6 +85,11 @@
             <pre class="fragment fade-in"><code id="fireblog" data-trim></code></pre>
           </span>
         </section>
+        <section>
+          Push Notification<br/><br/>
+          <span class="fragment fade-in">Foreground</span><br/>
+          <span class="fragment fade-in">Background</span>
+        </section>
       </div>
     </div>
 
@@ -99,6 +110,23 @@
         ]
       });
 
+      var config = {
+        apiKey: "AIzaSyCMFYSR0L4bqSn4tT6hX-oe7yCU4yRUw8k",
+        authDomain: "pwa-demo-74abf.firebaseapp.com",
+        databaseURL: "https://pwa-demo-74abf.firebaseio.com"
+      };
+      firebase.initializeApp(config);
+
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          console.log(user)
+        } else {
+          // If the user is not logged in, sign them in anonymously
+          firebase.auth().signInAnonymously().catch(function(error) {
+            console.log("Error signing user in anonymously:", error);
+          });
+        }
+      });
       var dynamicUrl = 'https://pwa-demo-74abf.firebaseio.com/blogs.json';
 
       Reveal.addEventListener( 'slidechanged', function( event ) {
@@ -121,6 +149,9 @@
           }).catch(function(ex) {
             console.log('parsing failed', ex)
           })
+        }
+        if (event.indexh == 6){
+          
         }
       });
 

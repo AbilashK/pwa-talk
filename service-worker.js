@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["css/reveal.css","ef73369b0150b2f714d72fc7e9ff3bf4"],["images/pwa-bg.png","c3c5baba96d685fa2ba7423d6fa53b86"],["images/pwa-intro.png","144681abed174f74d8bb742e6be89392"],["images/pwa-reliable.png","a068155f6592c846150fe48069caab69"],["index.html","9e80eea5dbb68d6df926e7732bc1006b"],["js/reveal.js","24463b7370c259d7d84b63496b66901e"],["js/reveal.min.js","2fba027771eb516b117b696a951640c7"]];
+var precacheConfig = [["css/reveal.css","ef73369b0150b2f714d72fc7e9ff3bf4"],["images/pwa-bg.png","c3c5baba96d685fa2ba7423d6fa53b86"],["images/pwa-intro.png","144681abed174f74d8bb742e6be89392"],["images/pwa-reliable.png","a068155f6592c846150fe48069caab69"],["index.html","97c7180531dd17da41d2973a0814bddb"],["js/reveal.js","24463b7370c259d7d84b63496b66901e"],["js/reveal.min.js","2fba027771eb516b117b696a951640c7"]];
 var cacheName = 'sw-precache-v3-pwa-talk-' + (self.registration ? self.registration.scope : '');
 
 
