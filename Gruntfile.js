@@ -171,6 +171,7 @@ module.exports = function(grunt) {
         rootDir + '/css/**.css',
         rootDir + '/**.html',
         rootDir + '/images/**.*',
+        rootDir + '/manifest.json',
         rootDir + '/js/**.js'
       ],
 			runtimeCaching: [{
